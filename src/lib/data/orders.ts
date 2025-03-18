@@ -23,7 +23,7 @@ export const retrieveOrder = async (id: string) => {
       },
       headers,
       next,
-      cache: "force-cache",
+      cache: "no-store",
     })
     .then(({ order }) => order)
     .catch((err) => medusaError(err))
@@ -50,7 +50,7 @@ export const listOrders = async (limit: number = 10, offset: number = 0) => {
       },
       headers,
       next,
-      cache: "force-cache",
+      cache: "no-store",
     })
     .then(({ orders }) => orders)
     .catch((err) => medusaError(err))
